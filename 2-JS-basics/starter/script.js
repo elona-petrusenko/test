@@ -182,30 +182,70 @@ EXTRA AFTER FINISHING: Mark's family also went on a holiday, going to 4 differen
 Mark likes to tip 20% of the bill when the bill is less than $100, 10% when the bill is between $100 and $300, and 25% if the bill is more than $300 (different than John).
 
 5. Implement the same functionality as before, this time using Mark's tipping rules
-6. Create a function (not a method) to calculate the average of a given array of tips. HINT: Loop over the array, and in each iteration store the current sum in a variable (starting from 0). After you have the sum of the array, divide it by the number of elements in it (that's how you calculate the average)
+6. Create a function (not a method) to calculate the average of a given array of tips. 
+  HINT: Loop over the array, and in each iteration store the current sum in a variable (starting from 0). 
+  After you have the sum of the array, divide it by the number of elements in it (that's how you calculate the average)
 7. Calculate the average tip for each family
 8. Log to the console which family paid the highest tips on average
 
 GOOD LUCK 😀
 */
-
 var john = {
   name: 'John',
   bills: [124, 48, 268, 180, 42],
   calcTips: function() {
-    var allTips = [];
-    var finalPaid = [];
-    for (var i = 0; i < john.bills.length; i++) {
-      if (john.bills[i] < 50) {
+    this.allTips = [];
+    this.finalPaid = [];
+    for (var i = 0; i < this.bills.length; i++) {
+      if (this.bills[i] < 50) {
         this.tip = this.bills[i] * .2;
-      } else if (john.bills[i] >= 50 && john.bills[i] <=200) {
+      } else if (this.bills[i] >= 50 && this.bills[i] <=200) {
         this.tip = this.bills[i] * .15;
       } else {
         this.tip = this.bills[i] * .1;
       }
-      this.allTips.push(john.calcTips(john.bills[i]));
-      this.finalPaid.push(bills[i] + allTips[i]);
+      this.allTips.push(this.tip);
+      this.finalPaid.push(this.bills[i] + this.tip);
     }
-    return this.allTips, this.finalPaid;
   }
 }
+var mark = {
+  name: 'Mark',
+  bills: [77, 375, 110, 45],
+  calcTips: function() {
+    this.allTips = [];
+    this.finalPaid = [];
+    for (var i = 0; i < this.bills.length; i++) {
+      if (this.bills[i] < 100) {
+        this.tip = this.bills[i] * .2;
+      } else if (this.bills[i] >= 100 && this.bills[i] <=300) {
+        this.tip = this.bills[i] * .1;
+      } else {
+        this.tip = this.bills[i] * .25;
+      }
+      this.allTips.push(this.tip);
+      this.finalPaid.push(this.bills[i] + this.tip);
+    }
+  }
+}
+john.calcTips();
+mark.calcTips();
+function calcAverage(tips) {
+  var sum = 0;
+  for (var i = 0; i < tips.length; i++) {
+    sum = sum + tips[i];
+  }
+  var average = sum / tips.length - 1;
+  return average;
+}
+if (calcAverage(mark.allTips) > calcAverage(john.allTips)) {
+  console.log('mark paid more than john and it equale ' + calcAverage(mark.allTips));
+} else {
+  console.log('john paid more than mark and it equale ' + calcAverage(john.allTips));
+}
+
+// console.log(calcAverage(mark.allTips));
+// console.log(calcAverage(john.allTips));
+
+// john.allTips.calcAverage();
+// mark.allTips.calcAverage();
