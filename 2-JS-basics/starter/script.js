@@ -235,13 +235,13 @@ function calcAverage(tips) {
   for (var i = 0; i < tips.length; i++) {
     sum = sum + tips[i];
   }
-  var average = sum / tips.length - 1;
+  var average = sum / tips.length;
   return average;
 }
 if (calcAverage(mark.allTips) > calcAverage(john.allTips)) {
-  console.log('mark paid more than john and it equale ' + calcAverage(mark.allTips));
+  console.log(mark.name + 'paid more than john and it equale ' + calcAverage(mark.allTips));
 } else {
-  console.log('john paid more than mark and it equale ' + calcAverage(john.allTips));
+  console.log(john.name + 'paid more than mark and it equale ' + calcAverage(john.allTips));
 }
 
 // console.log(calcAverage(mark.allTips));
