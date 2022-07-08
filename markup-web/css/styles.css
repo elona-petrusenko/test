@@ -1,0 +1,104 @@
+@font-face {
+  font-family: "SegoeUi";
+  src: url("../font/SEGOEUI.TTF") format("truetype"); }
+
+body {
+  font-size: 16px;
+  font-family: "SegoeUi", serif; }
+  @media screen and (max-width: 767px) {
+    body {
+      font-size: 14px; } }
+
+h2, h3, h5 {
+  font-weight: 400;
+  margin: 0 0 15px; }
+
+h2 {
+  font-size: 36px; }
+  @media screen and (max-width: 767px) {
+    h2 {
+      font-size: 26px; } }
+
+h5 {
+  font-size: 26px; }
+  @media screen and (max-width: 767px) {
+    h5 {
+      font-size: 20px; } }
+
+.breadcrumb {
+  padding: 15px 0;
+  margin: 0;
+  background: transparent; }
+
+.main-title-block {
+  position: relative;
+  padding: 100px 0;
+  margin: 0 0 50px;
+  background: url(../images/title-bg.jpg) no-repeat;
+  background-size: cover; }
+  @media screen and (max-width: 767px) {
+    .main-title-block {
+      padding: 50px 0;
+      margin: 0 0 25px; } }
+  .main-title-block:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); }
+  .main-title-block .container {
+    position: relative;
+    z-index: 1;
+    color: #fff; }
+  .main-title-block h2 {
+    margin: 0; }
+    @media screen and (max-width: 767px) {
+      .main-title-block h2 {
+        margin: 0 0 10px; } }
+  .main-title-block .sub-title {
+    font-size: 28px; }
+    @media screen and (max-width: 767px) {
+      .main-title-block .sub-title {
+        font-size: 20px; } }
+
+.tip {
+  margin: 0 0 50px; }
+  @media screen and (max-width: 767px) {
+    .tip {
+      margin: 0 0 30px; } }
+  .tip__image {
+    position: relative;
+    display: block;
+    margin: 0 0 15px;
+    border-radius: 0 20px;
+    overflow: hidden; }
+    .tip__image:hover:before {
+      opacity: 1;
+      visibility: visible;
+      height: 100%; }
+    .tip__image:before {
+      position: absolute;
+      content: '';
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 0;
+      background: rgba(0, 0, 0, 0.2);
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.5s ease all;
+      z-index: 1; }
+  .tip__title-top {
+    margin: 0 0 15px; }
+    .tip__title-top h5 {
+      margin: 0; }
+  .tip__link:hover {
+    color: #60A607;
+    text-decoration: none; }
+  .tip__autor {
+    font-size: 15px; }
+    @media screen and (max-width: 767px) {
+      .tip__autor {
+        font-size: 13px; } }
